@@ -1,0 +1,24 @@
+void move(String currplayer){
+        while(true){
+            int row= random.nextInt(2);
+            int col= random.nextInt(2);
+            if(board[row][col].getText()==""){
+                board[row][col].setText(currplayer);
+                // currplayer=playerX;
+                turns++;
+                return;
+            }
+        }
+    }  
+
+if (tile.getText()== ""){
+    tile.setText(currplayer);
+    turns++;
+    checkWinner();
+    if(!gameover){
+        currplayer= currplayer==playerX ? playerO : playerX;
+        if(currplayer==playerO) tile.setForeground(Color.BLACK);
+        else tile.setForeground(Color.BLUE);
+        textLabel.setText(currplayer + " 's turn.");
+    }
+}
